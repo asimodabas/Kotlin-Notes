@@ -27,6 +27,19 @@ class MainActivity : AppCompatActivity() {
         val multiplyLambda2 : (Int, Int) -> Int = {a,b -> a*b}
         println(multiplyLambda2(5,5))
 
+        //asynchrnous
+
+        //callback function, listener function, completion function
+
+        fun downloadMusicians(url: String, completion : () -> Unit) {
+            //url -> download
+            //data
+
+            completion()
+        }
+
+        downloadMusicians("url.com",{  -> println("Completed && Ready") })
+
     }
 
 }
