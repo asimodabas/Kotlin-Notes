@@ -4,20 +4,25 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var navigationController : NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        navigationController = Navigation.findNavController(this,R.id.fragment)
+        NavigationUI.setupActionBarWithNavController(this,navigationController)
 
         //Context
 
         //Activity Context -> this
         //App Context -> applicationContext
 
-
         Toast.makeText(this@MainActivity,"Welcome",Toast.LENGTH_LONG).show()
-
 
         /*
         button.setOnClickListener(object:View.OnClickListener {
@@ -27,7 +32,10 @@ class MainActivity : AppCompatActivity() {
         })
          */
 
+    }
 
+    override fun onSupportNavigateUp(): Boolean {
+        return NavigationUI.navigateUp(navigationController,null)
     }
 
     fun save() {
