@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/firstFragment"
         android:name="com.asimodabas.kotlingiris.FirstFragment"
-        android:label="FirstFragment" >
+        android:label="FirstFragment">
         <action
             android:id="@+id/action_firstFragment_to_secondFragment"
             app:destination="@id/secondFragment" />
@@ -15,13 +15,13 @@
     <fragment
         android:id="@+id/secondFragment"
         android:name="com.asimodabas.kotlingiris.SecondFragment"
-        android:label="SecondFragment" >
+        android:label="SecondFragment">
         <action
             android:id="@+id/action_secondFragment_to_firstFragment"
             app:destination="@id/firstFragment" />
         <argument
             android:name="age"
-            app:argType="integer"
-            android:defaultValue="0" />
+            android:defaultValue="0"
+            app:argType="integer" />
     </fragment>
 </navigation>

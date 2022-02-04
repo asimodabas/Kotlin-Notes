@@ -27,20 +27,19 @@ fun main() {
         if (tercih == 1) {
             println("************")
 
-            var toplam=0
+            var toplam = 0
 
-        for (dn in dersNotlari) {
+            for (dn in dersNotlari) {
                 println("${dn.ders} : ${dn.not}")
-                toplam = toplam+dn.not
+                toplam = toplam + dn.not
             }
-             val ortalama=toplam/dersNotlari.size
+            val ortalama = toplam / dersNotlari.size
             println("************")
             println("Ortalama:$ortalama")
 
-            if (ortalama>=50){
+            if (ortalama >= 50) {
                 println("Geçer")
-            }
-            else{
+            } else {
                 print("Kalır")
             }
             println("Çıkış yapıldı")
