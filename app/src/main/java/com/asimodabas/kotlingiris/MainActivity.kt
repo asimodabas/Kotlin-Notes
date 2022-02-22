@@ -7,9 +7,17 @@ import androidx.appcompat.app.AlertDialog
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
+    @Inject
+    private lateinit var lars : Musician
+
     private lateinit var navigationController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -17,20 +25,17 @@ class MainActivity : AppCompatActivity() {
         navigationController = Navigation.findNavController(this, R.id.fragment)
         NavigationUI.setupActionBarWithNavController(this, navigationController)
 
-        //Context
-
-        //Activity Context -> this
-        //App Context -> applicationContext
-
         Toast.makeText(this@MainActivity, "Welcome", Toast.LENGTH_LONG).show()
 
         /*
-        button.setOnClickListener(object:View.OnClickListener {
-            override fun onClick(v: View?) {
-                Toast.makeText(this@MainActivity,"test2",Toast.LENGTH_LONG).show()
-            }
-        })
+        val instrument = Instrument()
+        val band = Band()
+        var james = Musician(instrument, band)
+        james.sing()
          */
+
+        lars.sing()
+
 
     }
 
