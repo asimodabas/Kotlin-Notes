@@ -41,6 +41,10 @@ class MainActivity : AppCompatActivity() {
 
         Toast.makeText(this@MainActivity, "Welcome", Toast.LENGTH_LONG).show()
 
+        val tax = Tax()
+        val netIncome = tax.calculateIncome(100.0,0.1)
+        val netTax = tax.calculateTax(100.0,0.1)
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
