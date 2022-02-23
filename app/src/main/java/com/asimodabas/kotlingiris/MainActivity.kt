@@ -13,8 +13,22 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
+/*
+//Field Injection
+
     @Inject
     private lateinit var lars : Musician
+
+
+//onCreate
+     /*
+        val instrument = Instrument()
+        val band = Band()
+        var james = Musician(instrument, band)
+        james.sing()
+     */
+        lars.sing()
+*/
 
     private lateinit var navigationController: NavController
 
@@ -26,16 +40,6 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupActionBarWithNavController(this, navigationController)
 
         Toast.makeText(this@MainActivity, "Welcome", Toast.LENGTH_LONG).show()
-
-        /*
-        val instrument = Instrument()
-        val band = Band()
-        var james = Musician(instrument, band)
-        james.sing()
-         */
-
-        lars.sing()
-
 
     }
 
